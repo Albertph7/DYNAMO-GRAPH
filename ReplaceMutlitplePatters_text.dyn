@@ -1,0 +1,333 @@
+{
+  "Uuid": "2c798488-babf-46af-82f6-bfd72f9000be",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "ReplaceMutlitplePatters_text",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Math.PI": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "GeometryColor.Line": {
+        "Key": "Modifiers.GeometryColor",
+        "Value": "GeometryColor.dll"
+      },
+      "Geometry.Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.DesignScript.Geometry.Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Geometry.Arc": {
+        "Key": "Autodesk.DesignScript.Geometry.Arc",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.Document.Current": {
+        "Key": "Autodesk.AutoCAD.DynamoNodes.Document",
+        "Value": "AutoCADNodes.dll"
+      },
+      "Autodesk.Document": {
+        "Key": "Autodesk.AutoCAD.DynamoNodes.Document",
+        "Value": "AutoCADNodes.dll"
+      },
+      "Autodesk.AutoCAD.DynamoNodes.Document.Current": {
+        "Key": "Autodesk.AutoCAD.DynamoNodes.Document",
+        "Value": "AutoCADNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.AutoCAD.DynamoNodes.Document.Layers",
+      "Id": "7299ac459c474e6c8f8f719847dc86e8",
+      "Inputs": [
+        {
+          "Id": "bf174bc1f3404dfa81cb286ebe540aa5",
+          "Name": "document",
+          "Description": "Autodesk.AutoCAD.DynamoNodes.Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2435debc2cb9498ca63dd4fb1e3de76f",
+          "Name": "string[]",
+          "Description": "string[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get all layer names from the current document.\n\nDocument.Layers: string[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[\n\"TABL\",\n\"TITL\",\n\"PATT\",\n\"OFFS\",\n\"ASSM\",\n\"LABL\",\n\"CORR\",\n\"PROF\",\n\"BNDY\"\n];",
+      "Id": "f6bde3efa75f49cb84f06874ed87d3e0",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7f3e73cc98844da88e6cd32bc0b93256",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[\n\"TABLE\",\n\"TITLE\",\n\"PATTERN\",\n\"OFFSET\",\n\"ASSEMBLY\",\n\"LABEL\",\n\"CORRIDOR\",\n\"PROFILE\",\n\"BNDY\"\n];",
+      "Id": "af1fc27c70e54e64bc68df575f66aa80",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d8c44d4005764b8d90c0922742bdbdac",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "//Function to replace multiple texts\ndef ReplaceMultiplePatterns(texts: string[]..[],searchpatterns: string[],replacements: string[])\n\n{\n return [Imperative]\n{\n  result = [];\n //Result is a list;\n\n  //Loop through all lists of texts\n   for (i in 0..List.Count(texts)-1)\n\t{\n\t\tcurrenttext = texts[i];\n\n\t\t//Loop through the search patterns that must be replaced\n\t\tfor (j in 0..List.Count(searchpatterns)-1)\n\t\t  {\n\t\t\tcurrenttext = String.Replace(currenttext, searchpatterns[j], replacements[j]);\n\t\t   }\n\n\t\t\t\t//Add it to the result\n\t\t\t\tresult[i] = currenttext;\n\t}\n\n\treturn result;\n}\n};",
+      "Id": "d977ea1ccef444e6bff930bc30003d5a",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.AutoCAD.DynamoNodes.Document.Current",
+      "Id": "484cbcb5633a468c8ffc4b158a70ebaa",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "838575b1492d46a0a9ab21296476f4ce",
+          "Name": "Document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the current AutoCAD document.\n\nDocument.Current: Document"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "ReplaceMultiplePatterns(t,s,r);",
+      "Id": "10a6fe23ede3494f9f7cf3d020c0051a",
+      "Inputs": [
+        {
+          "Id": "742de4a23a0642668c5609e48bb62e02",
+          "Name": "t",
+          "Description": "t",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3a692ad4d60348739213cf9b91d9bce5",
+          "Name": "s",
+          "Description": "s",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3d1bd6899a984d4a85103209e5f4a92f",
+          "Name": "r",
+          "Description": "r",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1bcaa704397d49b59e67f2bdd2346508",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "2435debc2cb9498ca63dd4fb1e3de76f",
+      "End": "742de4a23a0642668c5609e48bb62e02",
+      "Id": "58d2314ffac44cf9b2a6e7d6c738c916",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7f3e73cc98844da88e6cd32bc0b93256",
+      "End": "3a692ad4d60348739213cf9b91d9bce5",
+      "Id": "1e68b187a1d346788df22fbec08a7c82",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d8c44d4005764b8d90c0922742bdbdac",
+      "End": "3d1bd6899a984d4a85103209e5f4a92f",
+      "Id": "690397dcb0ff4b5484d13e288348d224",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "838575b1492d46a0a9ab21296476f4ce",
+      "End": "bf174bc1f3404dfa81cb286ebe540aa5",
+      "Id": "87539d165631434294f6e916ef3d81bd",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.15",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.15.1.6076",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Document.Layers",
+        "ShowGeometry": true,
+        "Id": "7299ac459c474e6c8f8f719847dc86e8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -76.42831090138526,
+        "Y": 386.7212680175233
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "f6bde3efa75f49cb84f06874ed87d3e0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 236.69443995849235,
+        "Y": 537.15497689890515
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "af1fc27c70e54e64bc68df575f66aa80",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 431.15497689890549,
+        "Y": 725.6139954224584
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "d977ea1ccef444e6bff930bc30003d5a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 38.027612816058763,
+        "Y": -266.81843630555767
+      },
+      {
+        "Name": "Document.Current",
+        "ShowGeometry": true,
+        "Id": "484cbcb5633a468c8ffc4b158a70ebaa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -398.68703103709038,
+        "Y": 386.28551028651077
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "10a6fe23ede3494f9f7cf3d020c0051a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 786.38019514339067,
+        "Y": 359.6191057596568
+      }
+    ],
+    "Annotations": [],
+    "X": 162.64935556103364,
+    "Y": -291.36848527916038,
+    "Zoom": 0.960282177670604
+  }
+}
