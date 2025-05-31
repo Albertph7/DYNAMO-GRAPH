@@ -1,0 +1,469 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Sample_D4C3D_DataImportCSV(CSV-Dyn)",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "HintPath": "C:\\ProgramData\\Autodesk\\C3D 2020\\Dynamo\\Samples\\Data\\helix.csv",
+      "InputValue": "..\\..\\Data\\helix.csv",
+      "NodeType": "ExtensionNode",
+      "Id": "f338c699a0d34edf8bc9b48d08d90217",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2a4822274b2a4ba5a1408e6374bbe966",
+          "Name": "",
+          "Description": "Filename",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system to get its filename"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Geometry.Scale@double",
+      "Id": "0cde47c6106f4a0a9566872fd23a0a20",
+      "Inputs": [
+        {
+          "Id": "73d7f8d0da1545bfb5fd2be100f87873",
+          "Name": "geometry",
+          "Description": "Autodesk.DesignScript.Geometry.Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "37b5d13e700144a5856e79c707bc4d7c",
+          "Name": "amount",
+          "Description": "double\nDefault value : 1 (disabled)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "583d40dc07c642aa9064ff2272bdca96",
+          "Name": "Geometry",
+          "Description": "Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Longest",
+      "Description": "Scale uniformly around the origin\n\nGeometry.Scale (amount: double = 1): Geometry"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 20.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 2.337,
+      "Id": "47fd5c5685b74bec879a8ae7ed95afa4",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8e9cff24baf2456a9fab0656a3485738",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double,double",
+      "Id": "3b5acd4258a745d5ba6586fbae644634",
+      "Inputs": [
+        {
+          "Id": "0c5d2508c1604d8d833b097605bf1d84",
+          "Name": "x",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9a273a08493044339aa38ac7d4667b5b",
+          "Name": "y",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5d80888261314df1870575f2976aa6bc",
+          "Name": "z",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "95f27a8d29994ece9003dc7d9154a34a",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Form a Point given 3 cartesian coordinates\n\nPoint.ByCoordinates (x: double = 0, y: double = 0, z: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSOffice.Data.ImportCSV@string,bool",
+      "Id": "e9fd7be250834fe4b50050b213ee4ece",
+      "Inputs": [
+        {
+          "Id": "d1a51f2446b74eee85629e1f68ba3593",
+          "Name": "filePath",
+          "Description": "The CSV file to be converted into a list.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fabc771bbece46a990214dd1ccade714",
+          "Name": "transpose",
+          "Description": "Whether the resulting list should be transposed.\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9776e55f0ee44085b7c062b0b0a1c09d",
+          "Name": "list",
+          "Description": "The list containing the items in the CSV file.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Imports data from a CSV (comma separated values) file, put the items into a list and transpose it if needed.\n\nData.ImportCSV (filePath: string, transpose: bool = false): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "95452595e7c44151893265de31d97862",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "805f90b8ca414164847482440f88d245",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "a[0];\na[1];\na[2];",
+      "Id": "20f518c8c2fa43ad8dbeaacd3a8cc141",
+      "Inputs": [
+        {
+          "Id": "b4915c082c9c4e308427a51e5ac6a7fb",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "212ddb1aa4b84d149a13cbfa5fca2f25",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ecd7c1382747410b90e281e22693f7a2",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a53e71832855405fb599d8047f349107",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "2a4822274b2a4ba5a1408e6374bbe966",
+      "End": "d1a51f2446b74eee85629e1f68ba3593",
+      "Id": "27a9e69e19b248c6b6d9f90d9891c830"
+    },
+    {
+      "Start": "8e9cff24baf2456a9fab0656a3485738",
+      "End": "37b5d13e700144a5856e79c707bc4d7c",
+      "Id": "8eb80af71dbb4958a2531cd1a4b97a28"
+    },
+    {
+      "Start": "95f27a8d29994ece9003dc7d9154a34a",
+      "End": "73d7f8d0da1545bfb5fd2be100f87873",
+      "Id": "9e5a28c37e23482e9d0c7acda37a727a"
+    },
+    {
+      "Start": "9776e55f0ee44085b7c062b0b0a1c09d",
+      "End": "b4915c082c9c4e308427a51e5ac6a7fb",
+      "Id": "e38b71059a514858aa928d9c4a0b139a"
+    },
+    {
+      "Start": "805f90b8ca414164847482440f88d245",
+      "End": "fabc771bbece46a990214dd1ccade714",
+      "Id": "29a30203598f4d95a01fc94fc6da02f3"
+    },
+    {
+      "Start": "212ddb1aa4b84d149a13cbfa5fca2f25",
+      "End": "0c5d2508c1604d8d833b097605bf1d84",
+      "Id": "70d293981e8946a9a0e043b084a4cf27"
+    },
+    {
+      "Start": "ecd7c1382747410b90e281e22693f7a2",
+      "End": "9a273a08493044339aa38ac7d4667b5b",
+      "Id": "46389dca1aba409aadc4a46c84e22821"
+    },
+    {
+      "Start": "a53e71832855405fb599d8047f349107",
+      "End": "5d80888261314df1870575f2976aa6bc",
+      "Id": "8fa04565a8e34ff887b7c3ea0177e283"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.4.1.6326",
+      "RunType": "Automatic",
+      "RunPeriod": "100"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -9.368920747772794,
+      "EyeY": 63.519625793607119,
+      "EyeZ": 42.720996822583331,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "File Path",
+        "Id": "f338c699a0d34edf8bc9b48d08d90217",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -43.3678168079914,
+        "Y": -334.91036591325405
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Geometry.Scale",
+        "Id": "0cde47c6106f4a0a9566872fd23a0a20",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 979.95584139004768,
+        "Y": -342.87554385954195
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Number Slider",
+        "Id": "47fd5c5685b74bec879a8ae7ed95afa4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 634.01677004932958,
+        "Y": -193.46453488083733
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Point.ByCoordinates",
+        "Id": "3b5acd4258a745d5ba6586fbae644634",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 667.92687072944955,
+        "Y": -343.16967328828326
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Data.ImportCSV",
+        "Id": "e9fd7be250834fe4b50050b213ee4ece",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 182.3030760515727,
+        "Y": -334.69901705110522
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "95452595e7c44151893265de31d97862",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -56.3678168079914,
+        "Y": -236.06007968505639
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "20f518c8c2fa43ad8dbeaacd3a8cc141",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 499.88401568034556,
+        "Y": -331.35631811879267
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "9e7c7c316f6747c4b83a5dee2f7b8554",
+        "Title": "Refer to Autodesk out of the box Sample Data",
+        "Nodes": [
+          "bbf555fb6b144b79a06ab3f2e28882ef",
+          "4bc3edf2035f4cd7a761e395cdf4b188"
+        ],
+        "Left": -95.10616892664325,
+        "Top": -618.43490248244007,
+        "Width": 1379.0119459998409,
+        "Height": 112.0,
+        "FontSize": 36.0,
+        "InitialTop": -565.43490248244007,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF848484"
+      },
+      {
+        "Id": "689b965e151a46a59ecc29133a0db0ba",
+        "Title": "Adjust the overall distribution\r\nof the coordinate points",
+        "Nodes": [],
+        "Left": 1008.7933270274407,
+        "Top": -404.17824527166084,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "df06e6b9f64046e2bde6b7da6b2c3d24",
+        "Title": "Browse a CSV file that has numbers \r\nin x, y, and z coordinate space",
+        "Nodes": [],
+        "Left": -92.126763250614061,
+        "Top": -395.29046491145789,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "bbf555fb6b144b79a06ab3f2e28882ef",
+        "Title": "C:\\ProgramData\\Autodesk\\C3D 2020\\Dynamo\\Samples\\Data",
+        "Nodes": [],
+        "Left": -85.10616892664325,
+        "Top": -565.43490248244007,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "4bc3edf2035f4cd7a761e395cdf4b188",
+        "Title": "C:\\ProgramData\\Autodesk\\C3D 2020\\Dynamo\\Samples\\Data",
+        "Nodes": [],
+        "Left": 1008.9057770731976,
+        "Top": -565.43490248244007,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 413.45726389169687,
+    "Y": 718.24639380330814,
+    "Zoom": 0.81390799167676464
+  }
+}

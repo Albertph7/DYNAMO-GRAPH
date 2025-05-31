@@ -1,0 +1,469 @@
+{
+  "Uuid": "aacb7e72-59fa-4443-af8a-829e1d8b4755",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Python_D4C3D_LoopListByValueUsingIndex",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Created by: Jowenn S. Lua\r\n# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataIn = IN[0]\r\ndataOut = []\r\n\r\n# Place your code below this line\r\nfor a, x in enumerate(dataIn):\r\n\ti = 0\r\n\twhile i < x:\r\n\t\tdataOut.append(a)\r\n\t\ti += 1\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = dataOut",
+      "VariableInputPorts": true,
+      "Id": "5b91680a4b9a4920b49300c4093d1f84",
+      "Inputs": [
+        {
+          "Id": "012c33dad9554ae19e86423f8b975713",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "346e6c43e3914fbfb1b245970c6716f7",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[3, 2, 4, 6];",
+      "Id": "858facf46b8947fc93faa3939044c675",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d3ad8029dc6b4251b5d74bf9ec665179",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "a95a5a739f664f0ab301553af985e4c0",
+      "Inputs": [
+        {
+          "Id": "5066f77496e24926aacbcc0c6c9c8ecf",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fd0b82308d27403781630a92c4a136b2",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "346e6c43e3914fbfb1b245970c6716f7",
+      "End": "5066f77496e24926aacbcc0c6c9c8ecf",
+      "Id": "3a34f9f34fa04ec0ab85ac9f338a3c8f"
+    },
+    {
+      "Start": "d3ad8029dc6b4251b5d74bf9ec665179",
+      "End": "012c33dad9554ae19e86423f8b975713",
+      "Id": "1075fd5da39245f29d7655b34c53ea51"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.4.0.5820",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script - Loop List Value by Index",
+        "Id": "5b91680a4b9a4920b49300c4093d1f84",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1695.531655537324,
+        "Y": 868.67796822191644
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "858facf46b8947fc93faa3939044c675",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1147.5349368608129,
+        "Y": 873.46993486675478
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "a95a5a739f664f0ab301553af985e4c0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2046.1416038208076,
+        "Y": 621.746884899211
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "7518dee262c8490ca8d405cecc2fba63",
+        "Title": "PROCESS - Python\r\nLoop List by Value Using Index",
+        "Nodes": [
+          "5b91680a4b9a4920b49300c4093d1f84",
+          "35ca984a6f5e4196a471413fe268d70f"
+        ],
+        "Left": 1662.583520074834,
+        "Top": 497.375202858895,
+        "Width": 319.0,
+        "Height": 464.30276536302142,
+        "FontSize": 36.0,
+        "InitialTop": 637.375202858895,
+        "InitialHeight": 376.30276536302142,
+        "TextblockHeight": 130.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "ac5f928fe9964d74bbd9c36136c5a653",
+        "Title": "DATA IN - User Input as List",
+        "Nodes": [
+          "858facf46b8947fc93faa3939044c675",
+          "8789adcb5af04bbc99ebf89528a03e83"
+        ],
+        "Left": 1137.5349368608129,
+        "Top": 788.94544696096386,
+        "Width": 469.08588731712234,
+        "Height": 177.52448790579092,
+        "FontSize": 36.0,
+        "InitialTop": 841.94544696096386,
+        "InitialHeight": 176.52448790579092,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "dd22222f3ce7490584c97ba1121d3968",
+        "Title": "PROCESS",
+        "Nodes": [
+          "9bc52a9483744cca87b646038668c96d"
+        ],
+        "Left": 566.262123959485,
+        "Top": 761.15095988918415,
+        "Width": 244.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 814.15095988918415,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "8a9b83cf46f741e69db8d3bed3613c49",
+        "Title": "DATA IN",
+        "Nodes": [
+          "73192560c5a0465891598f1c0ec80a28"
+        ],
+        "Left": 565.74442889806119,
+        "Top": 660.694073694877,
+        "Width": 244.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 713.694073694877,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "47abe17511ae480c9762af85e206b5ac",
+        "Title": "GET",
+        "Nodes": [
+          "047d4a5eb5cd4e21a37262b2b16c39d2"
+        ],
+        "Left": 565.28782233363245,
+        "Top": 559.18526312015683,
+        "Width": 243.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 612.18526312015683,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "06285cf723da407797efb1f0c207412e",
+        "Title": "NOTES - D4C3D",
+        "Nodes": [
+          "f1c37dcd7b7e4cec843fa8a60c87d9ef"
+        ],
+        "Left": 232.02246998739815,
+        "Top": 559.8572296311977,
+        "Width": 326.0,
+        "Height": 414.0,
+        "FontSize": 36.0,
+        "InitialTop": 612.8572296311977,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF848484"
+      },
+      {
+        "Id": "2d96a39422e94cbfa07ca26c387bdbdc",
+        "Title": "SET",
+        "Nodes": [
+          "ee7adb66b1ef4d6d9c920665ccf59a80"
+        ],
+        "Left": 813.81746701963539,
+        "Top": 760.82391437417755,
+        "Width": 234.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 813.82391437417755,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF71C6A8"
+      },
+      {
+        "Id": "fa46e099f86b44ed913bfa7873ce9d26",
+        "Title": "DATA OUT",
+        "Nodes": [
+          "b913cb49929b42258a5ead2b2ea358f9"
+        ],
+        "Left": 813.90380601441075,
+        "Top": 660.6160440773142,
+        "Width": 235.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 713.6160440773142,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "2c740061638d44a4b11977df33129617",
+        "Title": "CREATE",
+        "Nodes": [
+          "c4deb12d3a3645afaeba35f17c669452"
+        ],
+        "Left": 813.290667290923,
+        "Top": 558.84085268429749,
+        "Width": 236.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 611.84085268429749,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "d00a76664e4141df8a04b0de014c3be4",
+        "Title": "TEMP",
+        "Nodes": [
+          "92f4d0ae81e7448d93a0bf505fcaa5e4"
+        ],
+        "Left": 564.45674523492676,
+        "Top": 878.26734981677168,
+        "Width": 482.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 931.26734981677168,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "35ca984a6f5e4196a471413fe268d70f",
+        "Title": "INSTRUCTIONS\r\n________________________________________________________\r\nCreate a new list from list value and using index as result.\r\n\r\n\r\nINPUTS\r\n________________________________________________________\r\n[0] List of Numbers\r\n\r\nOUTPUT\r\n________________________________________________________\r\n[0] New List using Index as result",
+        "Nodes": [],
+        "Left": 1672.583520074834,
+        "Top": 637.375202858895,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "8789adcb5af04bbc99ebf89528a03e83",
+        "Title": "List Data using integer = will work as normal\r\nList Data using double = will work + 1\r\nList Data using string = WILL NOT WORK",
+        "Nodes": [],
+        "Left": 1341.6208241779352,
+        "Top": 841.94544696096386,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "9bc52a9483744cca87b646038668c96d",
+        "Title": "Dynamo data & objects creation          ",
+        "Nodes": [],
+        "Left": 576.262123959485,
+        "Top": 814.15095988918415,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "73192560c5a0465891598f1c0ec80a28",
+        "Title": "Import information / data from others ",
+        "Nodes": [],
+        "Left": 575.74442889806119,
+        "Top": 713.694073694877,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "047d4a5eb5cd4e21a37262b2b16c39d2",
+        "Title": "Get information / data from Civil 3D    ",
+        "Nodes": [],
+        "Left": 575.28782233363245,
+        "Top": 612.18526312015683,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "f1c37dcd7b7e4cec843fa8a60c87d9ef",
+        "Title": "DESIGN GRAPH STANDARDS\r\n                                                                                       \r\nAuthor:\t\tJowenn S. Lua\r\nDate Created:\t10 August 2019\r\nDate Updated:\t24 August 2019\r\nVersion:\t\t002\r\n________________________________________________________\r\n\r\nDESIGN GRAPH GUIDELINES\r\n\r\n1. Color code your blocks according to this guide.\r\n\r\n2. Add grouping with name and description.\r\n\r\n3. Add notes to explain each critical node process.\r\n\r\n4. Rename Input / Output / Code Blocks nodes and add suffix to data they carry.\r\n\r\n5. Align nodes to make it neat.\r\n\r\n6. Save the graph as Manual instead of Automatic.\r\n________________________________________________________",
+        "Nodes": [],
+        "Left": 242.02246998739815,
+        "Top": 612.8572296311977,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "ee7adb66b1ef4d6d9c920665ccf59a80",
+        "Title": "Set or Override Parameter in Civil 3D",
+        "Nodes": [],
+        "Left": 823.81746701963539,
+        "Top": 813.82391437417755,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "b913cb49929b42258a5ead2b2ea358f9",
+        "Title": "Export information / data to others   ",
+        "Nodes": [],
+        "Left": 823.90380601441075,
+        "Top": 713.6160440773142,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "c4deb12d3a3645afaeba35f17c669452",
+        "Title": "Create object in Civil 3D                     ",
+        "Nodes": [],
+        "Left": 823.290667290923,
+        "Top": 611.84085268429749,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "92f4d0ae81e7448d93a0bf505fcaa5e4",
+        "Title": "Not in use / Work in progress / To Debug / To delete                                                  ",
+        "Nodes": [],
+        "Left": 574.45674523492676,
+        "Top": 931.26734981677168,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -177.23162208535004,
+    "Y": -412.00636371388805,
+    "Zoom": 0.8851724474033541
+  }
+}

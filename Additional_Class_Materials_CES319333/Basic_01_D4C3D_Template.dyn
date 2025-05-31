@@ -1,0 +1,284 @@
+{
+  "Uuid": "aacb7e72-59fa-4443-af8a-829e1d8b4755",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Basic_01_D4C3D_Template",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [],
+  "Connectors": [],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.4.0.5820",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 330234.58117643482,
+      "EyeY": 23.386949575658182,
+      "EyeZ": -6250091.0484438231,
+      "LookX": 143.59069856518181,
+      "LookY": -30.637449300999979,
+      "LookZ": -291.95155617687851,
+      "UpX": -0.053785739898487478,
+      "UpY": 0.99254615164132931,
+      "UpZ": 0.10935826921442521
+    },
+    "NodeViews": [],
+    "Annotations": [
+      {
+        "Id": "756401a34c7c4dbc92c3b97271a2612c",
+        "Title": "PROCESS",
+        "Nodes": [
+          "d129d4e6e98f45a893f259889feab64a"
+        ],
+        "Left": 606.09932575449284,
+        "Top": -372.370881930407,
+        "Width": 244.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -319.370881930407,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "5c9a852407c44431a066557f33bcacdd",
+        "Title": "DATA IN",
+        "Nodes": [
+          "7eb5996253774719b19cf45c3a51375a"
+        ],
+        "Left": 605.581630693069,
+        "Top": -472.82776812471411,
+        "Width": 244.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -419.82776812471411,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "ea6781d6418c4b9eaa29d521e5cf72b8",
+        "Title": "GET",
+        "Nodes": [
+          "82e7f95c791d4ae794e312938ae0e0a6"
+        ],
+        "Left": 605.12502412864023,
+        "Top": -574.33657869943431,
+        "Width": 243.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -521.33657869943431,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "2d852075f2ce41a583928a3918a65abc",
+        "Title": "NOTES - D4C3D",
+        "Nodes": [
+          "34fc73e852784c1ca98168e0c860884b"
+        ],
+        "Left": 271.85967178240594,
+        "Top": -573.66461218839345,
+        "Width": 326.0,
+        "Height": 414.0,
+        "FontSize": 36.0,
+        "InitialTop": -520.66461218839345,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF848484"
+      },
+      {
+        "Id": "c32ece8bd75a45c280fa6525b3befaee",
+        "Title": "SET",
+        "Nodes": [
+          "cb9eb0864e3044ebbd395eff7e170ebe"
+        ],
+        "Left": 853.65466881464317,
+        "Top": -372.6979274454136,
+        "Width": 234.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -319.6979274454136,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF71C6A8"
+      },
+      {
+        "Id": "95d59e9bffef4deba196d75da04f354c",
+        "Title": "DATA OUT",
+        "Nodes": [
+          "2c74606b159549658de34c1d81de64b9"
+        ],
+        "Left": 853.74100780941853,
+        "Top": -472.90579774227695,
+        "Width": 235.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -419.90579774227695,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "cdc8800e4bf549c58011df63d9a284e4",
+        "Title": "CREATE",
+        "Nodes": [
+          "2aabb8b5b6164ff88102100507680dce"
+        ],
+        "Left": 853.1278690859308,
+        "Top": -574.68098913529366,
+        "Width": 236.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -521.68098913529366,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "c6ef2a5d9ccc43bb9ccb221fd1a17e67",
+        "Title": "TEMP",
+        "Nodes": [
+          "aa9c2ef65f9a49c1b058cc0823d7520a"
+        ],
+        "Left": 604.29394702993454,
+        "Top": -255.25449200281946,
+        "Width": 482.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -202.25449200281946,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "d129d4e6e98f45a893f259889feab64a",
+        "Title": "Dynamo data & objects creation          ",
+        "Nodes": [],
+        "Left": 616.09932575449284,
+        "Top": -319.370881930407,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "7eb5996253774719b19cf45c3a51375a",
+        "Title": "Import information / data from others ",
+        "Nodes": [],
+        "Left": 615.581630693069,
+        "Top": -419.82776812471411,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "82e7f95c791d4ae794e312938ae0e0a6",
+        "Title": "Get information / data from Civil 3D    ",
+        "Nodes": [],
+        "Left": 615.12502412864023,
+        "Top": -521.33657869943431,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "34fc73e852784c1ca98168e0c860884b",
+        "Title": "DESIGN GRAPH STANDARDS\r\n                                                                                       \r\nAuthor:\t\tJowenn S. Lua\r\nDate Created:\t10 August 2019\r\nDate Updated:\t24 August 2019\r\nVersion:\t\t002\r\n________________________________________________________\r\n\r\nDESIGN GRAPH GUIDELINES\r\n\r\n1. Color code your blocks according to this guide.\r\n\r\n2. Add grouping with name and description.\r\n\r\n3. Add notes to explain each critical node process.\r\n\r\n4. Rename Input / Output / Code Blocks nodes and add suffix to data they carry.\r\n\r\n5. Align nodes to make it neat.\r\n\r\n6. Save the graph as Manual instead of Automatic.\r\n________________________________________________________",
+        "Nodes": [],
+        "Left": 281.85967178240594,
+        "Top": -520.66461218839345,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "cb9eb0864e3044ebbd395eff7e170ebe",
+        "Title": "Set or Override Parameter in Civil 3D",
+        "Nodes": [],
+        "Left": 863.65466881464317,
+        "Top": -319.6979274454136,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "2c74606b159549658de34c1d81de64b9",
+        "Title": "Export information / data to others   ",
+        "Nodes": [],
+        "Left": 863.74100780941853,
+        "Top": -419.90579774227695,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "2aabb8b5b6164ff88102100507680dce",
+        "Title": "Create object in Civil 3D                     ",
+        "Nodes": [],
+        "Left": 863.1278690859308,
+        "Top": -521.68098913529366,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "aa9c2ef65f9a49c1b058cc0823d7520a",
+        "Title": "Not in use / Work in progress / To Debug / To delete                                                  ",
+        "Nodes": [],
+        "Left": 614.29394702993454,
+        "Top": -202.25449200281946,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -295.10036509207157,
+    "Y": 722.43745793251958,
+    "Zoom": 1.202807667577551
+  }
+}

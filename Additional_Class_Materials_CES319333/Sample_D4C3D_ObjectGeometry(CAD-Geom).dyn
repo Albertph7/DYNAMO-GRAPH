@@ -1,0 +1,410 @@
+{
+  "Uuid": "da8a96d7-014f-4e44-bc0a-9012d3d23b19",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Sample_D4C3D_ObjectGeometry(CAD-Geom)",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.AutoCAD.DynamoNodes.Object.Geometry",
+      "Id": "17020d69ad4744359056884050ccefcb",
+      "Inputs": [
+        {
+          "Id": "3c2972b4f9f347c2b5202aa935290ffb",
+          "Name": "object",
+          "Description": "Autodesk.AutoCAD.DynamoNodes.Object",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "30e411d43307402faf1e54d45299cd90",
+          "Name": "Geometry",
+          "Description": "Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get Dynamo representation of this object.\n\nObject.Geometry: Geometry"
+    },
+    {
+      "ConcreteType": "Autodesk.AutoCAD.DynamoNodes.ObjectSelection, AutoCADNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "46AA"
+      ],
+      "Id": "ff78f158371a4e76973a7d89e09a2bc6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "78dd50a77dd54df6b208c46c9e6be838",
+          "Name": "Object",
+          "Description": "Object",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "78dd50a77dd54df6b208c46c9e6be838",
+      "End": "3c2972b4f9f347c2b5202aa935290ffb",
+      "Id": "1042a00eea154b1abdaa27167636e49b"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.4.0.5820",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -79689.985946627654,
+      "EyeY": 8855.6634864507814,
+      "EyeZ": 21815.197700366924,
+      "LookX": 8174.4586028776539,
+      "LookY": -8855.6634864507814,
+      "LookZ": -39509.883247241924,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Object.Geometry",
+        "Id": "17020d69ad4744359056884050ccefcb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 151.75059058650686,
+        "Y": -670.20769606218846
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Select Object",
+        "Id": "ff78f158371a4e76973a7d89e09a2bc6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -295.790225557595,
+        "Y": -670.20769606218846
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "a2d4ca4a300542cf84acc9cf120c31da",
+        "Title": "PROCESS -Object.Geometry (CAD to Geom)",
+        "Nodes": [
+          "17020d69ad4744359056884050ccefcb",
+          "ff78f158371a4e76973a7d89e09a2bc6",
+          "9c370439987f4b7182419ebdd8f7c7c7",
+          "6e5793024a24472c8fa74772223952c6"
+        ],
+        "Left": -305.790225557595,
+        "Top": -770.7576810518824,
+        "Width": 709.89198743115685,
+        "Height": 219.54998498969394,
+        "FontSize": 36.0,
+        "InitialTop": -717.7576810518824,
+        "InitialHeight": 194.08089700287906,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "f8a215eb92ac4cb5b07d4e3aea40e781",
+        "Title": "TEMP",
+        "Nodes": [
+          "b6c1899579884ec19eb9632b907f9bdc"
+        ],
+        "Left": -965.78090150729031,
+        "Top": -453.94306738821729,
+        "Width": 482.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -400.94306738821729,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "4026318e2244401087b851daadebdd8a",
+        "Title": "NOTES - D4C3D",
+        "Nodes": [
+          "c2485e452afe4da88fbeec4d9e7cc8c4"
+        ],
+        "Left": -1298.2151767548189,
+        "Top": -772.35318757379127,
+        "Width": 326.0,
+        "Height": 414.0,
+        "FontSize": 36.0,
+        "InitialTop": -719.35318757379127,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF848484"
+      },
+      {
+        "Id": "98e54b3b014a4550b75c16456680b9c0",
+        "Title": "PROCESS",
+        "Nodes": [
+          "2a8d93673bb04f79bd98b5f958f63a26"
+        ],
+        "Left": -963.975522782732,
+        "Top": -571.05945731580482,
+        "Width": 244.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -518.05945731580482,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "b80dcd06343b43ea832e2625277b9d1d",
+        "Title": "SET",
+        "Nodes": [
+          "70eae55bcc4b41ae87f384bdfb5df250"
+        ],
+        "Left": -716.42017972258168,
+        "Top": -571.38650283081142,
+        "Width": 234.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -518.38650283081142,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF71C6A8"
+      },
+      {
+        "Id": "ec2f6cbebcb34377a2dc0e9556eb611b",
+        "Title": "DATA IN",
+        "Nodes": [
+          "2b152df88ece4836b396b9adbdc062d5"
+        ],
+        "Left": -964.49321784415588,
+        "Top": -671.51634351011194,
+        "Width": 244.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -618.51634351011194,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "06205b9f7b0c446ba0f0335ce497aafc",
+        "Title": "DATA OUT",
+        "Nodes": [
+          "5cde103b479d4a9daed0a02d7c1ec026"
+        ],
+        "Left": -716.33384072780632,
+        "Top": -671.59437312767477,
+        "Width": 235.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -618.59437312767477,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "2c2c172c71184f2ba9188b7cbe81b0b2",
+        "Title": "GET",
+        "Nodes": [
+          "c64595ad77774c6594cef4c977f8efd8"
+        ],
+        "Left": -964.94982440858462,
+        "Top": -773.02515408483214,
+        "Width": 243.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -720.02515408483214,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "b55fb693e436453195c6e88d064dab93",
+        "Title": "CREATE",
+        "Nodes": [
+          "cbbb59e96b424e5b9321e638a3f95f60"
+        ],
+        "Left": -716.946979451294,
+        "Top": -773.36956452069148,
+        "Width": 236.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -720.36956452069148,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "9c370439987f4b7182419ebdd8f7c7c7",
+        "Title": "Select object from CAD",
+        "Nodes": [],
+        "Left": -294.56881926249105,
+        "Top": -717.7576810518824,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "6e5793024a24472c8fa74772223952c6",
+        "Title": "Convert Obj from CAD to Dyanamo Geometry",
+        "Nodes": [],
+        "Left": 131.10176187356183,
+        "Top": -714.62407425350671,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "b6c1899579884ec19eb9632b907f9bdc",
+        "Title": "Not in use / Work in progress / To Debug / To delete                                                  ",
+        "Nodes": [],
+        "Left": -955.78090150729031,
+        "Top": -400.94306738821729,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "c2485e452afe4da88fbeec4d9e7cc8c4",
+        "Title": "DESIGN GRAPH STANDARDS\r\n                                                                                       \r\nAuthor:\t\tJowenn S. Lua\r\nDate Created:\t10 August 2019\r\nDate Updated:\t24 August 2019\r\nVersion:\t\t002\r\n________________________________________________________\r\n\r\nDESIGN GRAPH GUIDELINES\r\n\r\n1. Color code your blocks according to this guide.\r\n\r\n2. Add grouping with name and description.\r\n\r\n3. Add notes to explain each critical node process.\r\n\r\n4. Rename Input / Output / Code Blocks nodes and add suffix to data they carry.\r\n\r\n5. Align nodes to make it neat.\r\n\r\n6. Save the graph as Manual instead of Automatic.\r\n________________________________________________________",
+        "Nodes": [],
+        "Left": -1288.2151767548189,
+        "Top": -719.35318757379127,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "2a8d93673bb04f79bd98b5f958f63a26",
+        "Title": "Dynamo data & objects creation          ",
+        "Nodes": [],
+        "Left": -953.975522782732,
+        "Top": -518.05945731580482,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "70eae55bcc4b41ae87f384bdfb5df250",
+        "Title": "Set or Override Parameter in Civil 3D",
+        "Nodes": [],
+        "Left": -706.42017972258168,
+        "Top": -518.38650283081142,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "2b152df88ece4836b396b9adbdc062d5",
+        "Title": "Import information / data from others ",
+        "Nodes": [],
+        "Left": -954.49321784415588,
+        "Top": -618.51634351011194,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "5cde103b479d4a9daed0a02d7c1ec026",
+        "Title": "Export information / data to others   ",
+        "Nodes": [],
+        "Left": -706.33384072780632,
+        "Top": -618.59437312767477,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "c64595ad77774c6594cef4c977f8efd8",
+        "Title": "Get information / data from Civil 3D    ",
+        "Nodes": [],
+        "Left": -954.94982440858462,
+        "Top": -720.02515408483214,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "cbbb59e96b424e5b9321e638a3f95f60",
+        "Title": "Create object in Civil 3D                     ",
+        "Nodes": [],
+        "Left": -706.946979451294,
+        "Top": -720.36956452069148,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 1224.5028271235901,
+    "Y": 779.3317456669356,
+    "Zoom": 0.859070281796599
+  }
+}

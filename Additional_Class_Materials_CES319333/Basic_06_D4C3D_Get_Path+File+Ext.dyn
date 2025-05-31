@@ -1,0 +1,329 @@
+{
+  "Uuid": "1671af6c-9a3d-4f0e-ba3f-0c72902ebd48",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Basic_06_D4C3D_Get_Path+File+Ext",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.IO.FileSystem.ChangePathExtension@string,string",
+      "Id": "9afb46a05f614c78b9f74bfbcb2494ec",
+      "Inputs": [
+        {
+          "Id": "d703c08fd5744b7ca26e4963caa13c18",
+          "Name": "path",
+          "Description": "Path to change extension of.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "92c8a58a3205499782903077763814fa",
+          "Name": "newExtension",
+          "Description": "New extension.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c1e13106dd834e62908c9e613833d0fd",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Changes the extension of a file path.\n\nFileSystem.ChangePathExtension (path: string, newExtension: string): string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.AutoCAD.DynamoNodes.Document.Current",
+      "Id": "682ba78188674930b0b82293414f3d55",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9fefe03cff5a4148bea518d8d6baf32e",
+          "Name": "Document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the current AutoCAD document.\n\nDocument.Current: Document"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.AutoCAD.DynamoNodes.Document.Detail@Autodesk.AutoCAD.DynamoNodes.Document",
+      "Id": "8bb019652657437e877fd1bfdf089ad8",
+      "Inputs": [
+        {
+          "Id": "1bdf11ac39f34831931d045227c67014",
+          "Name": "document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4f0ae48622184698b0ecbd9ca71a52c6",
+          "Name": "folder",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fdfb70386eb6459ea523b3758351764a",
+          "Name": "fileName",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the folder and file name of this document.\n\nDocument.Detail (document: Document): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"csv\";",
+      "Id": "77c2468e7fb04ec888f1e1543103646b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "cd02f6619d054500bf2efd1953cbc918",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "Path+\"\\\\\"+File;",
+      "Id": "1feb5e7a2ffc47768ea5daed5a9836ba",
+      "Inputs": [
+        {
+          "Id": "6c179295b5e74e68a6a6614656fbfa48",
+          "Name": "Path",
+          "Description": "Path",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8c40888a827f40a6aece528eb43e8255",
+          "Name": "File",
+          "Description": "File",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9f88d1b014c643d4b1d10a6fc533037f",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "c1e13106dd834e62908c9e613833d0fd",
+      "End": "8c40888a827f40a6aece528eb43e8255",
+      "Id": "f45c408364504e739b1e8bd0e3fc1fa7"
+    },
+    {
+      "Start": "9fefe03cff5a4148bea518d8d6baf32e",
+      "End": "1bdf11ac39f34831931d045227c67014",
+      "Id": "3edc93fc0b2d4d8d9c440768e1ca268e"
+    },
+    {
+      "Start": "4f0ae48622184698b0ecbd9ca71a52c6",
+      "End": "6c179295b5e74e68a6a6614656fbfa48",
+      "Id": "837117eb253d47e59704bb3dbe18163e"
+    },
+    {
+      "Start": "fdfb70386eb6459ea523b3758351764a",
+      "End": "d703c08fd5744b7ca26e4963caa13c18",
+      "Id": "0902c3e1ee0b4fa4b50d8155505df4da"
+    },
+    {
+      "Start": "cd02f6619d054500bf2efd1953cbc918",
+      "End": "92c8a58a3205499782903077763814fa",
+      "Id": "a46f102ceecd4a5fa6cafe25d841ef86"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.4.1.6326",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": false,
+        "Name": "FileSystem.ChangePathExtension",
+        "Id": "9afb46a05f614c78b9f74bfbcb2494ec",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1119.0700254488802,
+        "Y": 221.12721525656661
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Document.Current",
+        "Id": "682ba78188674930b0b82293414f3d55",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 490.24616022195096,
+        "Y": 297.18434297674764
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Document.Detail",
+        "Id": "8bb019652657437e877fd1bfdf089ad8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 734.8505153965707,
+        "Y": 297.18434297674764
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "77c2468e7fb04ec888f1e1543103646b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 891.8505153965707,
+        "Y": 434.46120979670263
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Code Block",
+        "Id": "1feb5e7a2ffc47768ea5daed5a9836ba",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1626.6145335384792,
+        "Y": 298.82236525337362
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "ec387e814d2743a5a8416e09547166ec",
+        "Title": "GET - Current DWG folder and File - Rename to csv",
+        "Nodes": [
+          "8bb019652657437e877fd1bfdf089ad8",
+          "682ba78188674930b0b82293414f3d55",
+          "9afb46a05f614c78b9f74bfbcb2494ec",
+          "77c2468e7fb04ec888f1e1543103646b"
+        ],
+        "Left": 480.24616022195096,
+        "Top": 168.12721525656661,
+        "Width": 886.82386522692923,
+        "Height": 359.333994540136,
+        "FontSize": 36.0,
+        "InitialTop": 221.12721525656661,
+        "InitialHeight": 336.333994540136,
+        "TextblockHeight": 43.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "c8f5bdd1a08b4e289879509acc4430a2",
+        "Title": "DATA OUT",
+        "Nodes": [
+          "1feb5e7a2ffc47768ea5daed5a9836ba",
+          "e4cc187da1d644c1bf2aa368e415f68d"
+        ],
+        "Left": 1616.6145335384792,
+        "Top": 199.04526703175119,
+        "Width": 214.0,
+        "Height": 202.77709822162242,
+        "FontSize": 36.0,
+        "InitialTop": 252.04526703175119,
+        "InitialHeight": 179.7770982216224,
+        "TextblockHeight": 43.0,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "e4cc187da1d644c1bf2aa368e415f68d",
+        "Title": "This can go inside FIle Path",
+        "Nodes": [],
+        "Left": 1637.1556567924483,
+        "Top": 252.04526703175119,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 244.1425181240063,
+    "Y": 103.77440320503121,
+    "Zoom": 0.40011109428532138
+  }
+}

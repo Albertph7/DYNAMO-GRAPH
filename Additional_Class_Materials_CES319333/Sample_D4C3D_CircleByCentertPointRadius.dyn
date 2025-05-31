@@ -1,0 +1,416 @@
+{
+  "Uuid": "b6220913-d4a5-490e-9a53-a8933d2f088f",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Sample_D4C3D_CircleByCentertPointRadius",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double,double",
+      "Id": "b5061ffa243e432aaeb1e787facd8a22",
+      "Inputs": [
+        {
+          "Id": "3d6763610c4a4aa7bd2228a09fc44b4a",
+          "Name": "x",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bbab6e95ef9d47268e0bf16301947783",
+          "Name": "y",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "065d4343e8c8475f8d6e41f8b93d6365",
+          "Name": "z",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "24ea565f22a343d9a91cdf2800a7f7f8",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Form a Point given 3 cartesian coordinates\n\nPoint.ByCoordinates (x: double = 0, y: double = 0, z: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Circle.ByCenterPointRadius@Autodesk.DesignScript.Geometry.Point,double",
+      "Id": "cf44c2e6e23243ee8c2507bb98b12b94",
+      "Inputs": [
+        {
+          "Id": "14ecd150913c44699baa6bbd8fc1225b",
+          "Name": "centerPoint",
+          "Description": "Point\nDefault value : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0f31cfe0e6594a7895b79cae14fd3e91",
+          "Name": "radius",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "93384872165148a591d4e9bbac8a1450",
+          "Name": "Circle",
+          "Description": "Circle",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a Circle with input center Point and radius in the world XY plane, with world Z as normal.\n\nCircle.ByCenterPointRadius (centerPoint: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0), radius: double = 1): Circle"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "24ea565f22a343d9a91cdf2800a7f7f8",
+      "End": "14ecd150913c44699baa6bbd8fc1225b",
+      "Id": "c0a9bde4f99c40388b3179104ef88c3b"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.4.0.5820",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 8.14386873849019,
+      "EyeY": 2.2293270858178174,
+      "EyeZ": 7.9425716165805333,
+      "LookX": -3.5424321834381658,
+      "LookY": 0.61590594604893312,
+      "LookZ": -2.9398737283393839,
+      "UpX": 0.26319067738832974,
+      "UpY": 0.9396926207859243,
+      "UpZ": 0.21842263109941246
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Point.ByCoordinates",
+        "Id": "b5061ffa243e432aaeb1e787facd8a22",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 941.28288629064446,
+        "Y": -45.022916100461373
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Circle.ByCenterPointRadius",
+        "Id": "cf44c2e6e23243ee8c2507bb98b12b94",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1347.6182091831154,
+        "Y": -43.786788409690814
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "9598deee274746aeb3697f5d5310bd68",
+        "Title": "PROCESS - CircleByCenterPointRadius",
+        "Nodes": [
+          "b5061ffa243e432aaeb1e787facd8a22",
+          "cf44c2e6e23243ee8c2507bb98b12b94"
+        ],
+        "Left": 931.28288629064446,
+        "Top": -98.022916100461373,
+        "Width": 649.33532289247091,
+        "Height": 198.0,
+        "FontSize": 36.0,
+        "InitialTop": -45.022916100461373,
+        "InitialHeight": 146.23612769077056,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "ab0358c62bb5490689bcfb43dea3568a",
+        "Title": "PROCESS",
+        "Nodes": [
+          "877b8289729b4f17943a40d2c2029d42"
+        ],
+        "Left": 343.43299169625311,
+        "Top": 98.18060303899324,
+        "Width": 244.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 151.18060303899324,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "142c2177fa2c410c9eeb2b75b68ceaef",
+        "Title": "DATA IN",
+        "Nodes": [
+          "ff3b352ac7a54aa29a395d9a71ce0f0d"
+        ],
+        "Left": 342.91529663482925,
+        "Top": -2.2762831553138767,
+        "Width": 244.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 50.723716844686123,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "6adbe2f24e4d46828948dd5fe5908fba",
+        "Title": "GET",
+        "Nodes": [
+          "f78d39a60c9b45bd8b564f65c9d626c3"
+        ],
+        "Left": 342.45869007040051,
+        "Top": -103.78509373003408,
+        "Width": 243.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -50.785093730034077,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "5fdf480219b74716b907cc29119b3f56",
+        "Title": "NOTES - D4C3D",
+        "Nodes": [
+          "480941a9fce84766845beee5fa73d16a"
+        ],
+        "Left": 9.1933377241662129,
+        "Top": -103.11312721899321,
+        "Width": 326.0,
+        "Height": 414.0,
+        "FontSize": 36.0,
+        "InitialTop": -50.113127218993213,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF848484"
+      },
+      {
+        "Id": "8b6a0dd7433e47e497699219c88ee5cc",
+        "Title": "SET",
+        "Nodes": [
+          "5b059c43d41f460db289dcd515952036"
+        ],
+        "Left": 590.98833475640345,
+        "Top": 97.853557523986638,
+        "Width": 234.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 150.85355752398664,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF71C6A8"
+      },
+      {
+        "Id": "923d372dcc15474aa4229d004bd43f5e",
+        "Title": "DATA OUT",
+        "Nodes": [
+          "b9cd33fd883243c8ac86ec161e55ff83"
+        ],
+        "Left": 591.07467375117881,
+        "Top": -2.3543127728767104,
+        "Width": 235.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 50.64568722712329,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "87dfe34569dd436992041c5baf97a6a9",
+        "Title": "CREATE",
+        "Nodes": [
+          "20aa7eaecccd473cab4a73d7606d54cc"
+        ],
+        "Left": 590.46153502769107,
+        "Top": -104.12950416589342,
+        "Width": 236.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -51.129504165893422,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "5d2e7568ea2f4c74884d6e820785b9de",
+        "Title": "TEMP",
+        "Nodes": [
+          "a7fdd1b3cf7744819f714bcbd7b8f880"
+        ],
+        "Left": 341.62761297169482,
+        "Top": 215.29699296658077,
+        "Width": 482.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 268.29699296658077,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "877b8289729b4f17943a40d2c2029d42",
+        "Title": "Dynamo data & objects creation          ",
+        "Nodes": [],
+        "Left": 353.43299169625311,
+        "Top": 151.18060303899324,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "ff3b352ac7a54aa29a395d9a71ce0f0d",
+        "Title": "Import information / data from others ",
+        "Nodes": [],
+        "Left": 352.91529663482925,
+        "Top": 50.723716844686123,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "f78d39a60c9b45bd8b564f65c9d626c3",
+        "Title": "Get information / data from Civil 3D    ",
+        "Nodes": [],
+        "Left": 352.45869007040051,
+        "Top": -50.785093730034077,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "480941a9fce84766845beee5fa73d16a",
+        "Title": "DESIGN GRAPH STANDARDS\r\n                                                                                       \r\nAuthor:\t\tJowenn S. Lua\r\nDate Created:\t10 August 2019\r\nDate Updated:\t24 August 2019\r\nVersion:\t\t002\r\n________________________________________________________\r\n\r\nDESIGN GRAPH GUIDELINES\r\n\r\n1. Color code your blocks according to this guide.\r\n\r\n2. Add grouping with name and description.\r\n\r\n3. Add notes to explain each critical node process.\r\n\r\n4. Rename Input / Output / Code Blocks nodes and add suffix to data they carry.\r\n\r\n5. Align nodes to make it neat.\r\n\r\n6. Save the graph as Manual instead of Automatic.\r\n________________________________________________________",
+        "Nodes": [],
+        "Left": 19.193337724166213,
+        "Top": -50.113127218993213,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "5b059c43d41f460db289dcd515952036",
+        "Title": "Set or Override Parameter in Civil 3D",
+        "Nodes": [],
+        "Left": 600.98833475640345,
+        "Top": 150.85355752398664,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "b9cd33fd883243c8ac86ec161e55ff83",
+        "Title": "Export information / data to others   ",
+        "Nodes": [],
+        "Left": 601.07467375117881,
+        "Top": 50.64568722712329,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "20aa7eaecccd473cab4a73d7606d54cc",
+        "Title": "Create object in Civil 3D                     ",
+        "Nodes": [],
+        "Left": 600.46153502769107,
+        "Top": -51.129504165893422,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "a7fdd1b3cf7744819f714bcbd7b8f880",
+        "Title": "Not in use / Work in progress / To Debug / To delete                                                  ",
+        "Nodes": [],
+        "Left": 351.62761297169482,
+        "Top": 268.29699296658077,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 36.679356303194595,
+    "Y": 166.77525473275108,
+    "Zoom": 0.9641344354087672
+  }
+}

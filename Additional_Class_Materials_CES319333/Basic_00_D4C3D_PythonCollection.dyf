@@ -1,0 +1,782 @@
+{
+  "Uuid": "5ba92a45-2eb4-47d8-a075-c738b81f5069",
+  "IsCustomNode": true,
+  "Category": null,
+  "Description": null,
+  "Name": "Basic_00_D4C3D_PythonCollection",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Created By: \tJowenn S. Lua\r\n# Python Name:\tCombine Lists\r\n#----------------------------------------------------\r\n# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataIn0 = IN[0]\r\ndataIn1 = IN[1]\r\ndataOut = []\r\n\r\n# Place your code below\r\nfor i, x in enumerate(dataIn0):\r\n\tTemp = []\r\n\tz = dataIn1[i]\r\n\tfor j, y in enumerate(x):\r\n\t\tTemp.append(x[j])\r\n\tfor j, y in enumerate(z):\r\n\t\tTemp.append(z[j])\r\n\tdataOut.append(Temp)\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = dataOut\r\n\r\n",
+      "VariableInputPorts": true,
+      "Id": "0e405f3ad32c4c7b8e2e17528839ba85",
+      "Inputs": [
+        {
+          "Id": "2e5842e78f5848a385e7b3b9e1403d08",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "15e9addef91b4cb086ed0843063ff954",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f430414eba2141958bbd92a4e8a84d4c",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Created By: \tJowenn S. Lua\r\n# Python Name:\tLoop List Nth Times\r\n#----------------------------------------------------\r\n# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\n#clr.AddReference('ProtoGeometry')\r\n#from Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataIn0 = IN[0]\r\ndataIn1 = IN[1]\r\ndataIn2 = IN[2]\r\ndataOut = []\r\n\r\n# Place your code below this line\r\nfor x in range(dataIn2):\r\n\tfor y in range(dataIn1):\r\n\t\tdataOut.append(dataIn0[y])\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = dataOut",
+      "VariableInputPorts": true,
+      "Id": "600a76514a1243dfb4cd8bf7f0db4bd9",
+      "Inputs": [
+        {
+          "Id": "0dbb0211cdb941c5aabbd0559fed87eb",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e2b11ef0385c4391ab7b47c21a7cc4a9",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7ac5d83339de4a55abc7b85b9671618c",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cc349c91a4ee4f8e8b9458ab427621c8",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Created By: \tJowenn S. Lua\r\n# Python Name:\tLoop List Value by Index\r\n#----------------------------------------------------\r\n# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataIn = IN[0]\r\ndataOut = []\r\n\r\n# Place your code below this line\r\nfor a, x in enumerate(dataIn):\r\n\ti = 0\r\n\twhile i < x:\r\n\t\tdataOut.append(a)\r\n\t\ti += 1\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = dataOut",
+      "VariableInputPorts": true,
+      "Id": "747fcc8bcc72416bb65cb236e1836e14",
+      "Inputs": [
+        {
+          "Id": "c051b945752d45ae9da35c6e6a649782",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4829515f04434e6cbbcc948633530049",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Created By: \tJowenn S. Lua\r\n# Python Name:\tList Cycle\r\n#----------------------------------------------------\r\n# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\n#clr.AddReference('ProtoGeometry')\r\n#from Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataIn0 = IN[0]\r\ndataIn1 = IN[1]\r\ndataOut = []\r\n\r\n# Place your code below this line\r\nfor x in range(dataIn1):\r\n\tdataOut.append(dataIn0)\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = dataOut",
+      "VariableInputPorts": true,
+      "Id": "1110adb3312140d89905bbe142edefda",
+      "Inputs": [
+        {
+          "Id": "d48fa56efe50431c841a5150c4e9f362",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f73a9e9aa6f6431d986789cc8796a0eb",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dc00a18cc65640c8a6c148bcf7a5ec82",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "\"\"\"\r\nSource: https://forum.dynamobim.com/t/selection-method-all-objects-of-type/38954/11\r\n\r\nCopyright 2019 Autodesk, Inc. All rights reserved.\r\n\r\nThis file is part of the Civil 3D Python Module.\r\n\r\n\"\"\"\r\n__author__ = 'Paolo Emilio Serra - paolo.serra@autodesk.com'\r\n__copyright__ = '2019'\r\n__version__ = '1.0.0'\r\n\r\nimport clr\r\n\r\n# Add Assemblies for AutoCAD and Civil 3D APIs\r\nclr.AddReference('acmgd')\r\nclr.AddReference('acdbmgd')\r\nclr.AddReference('accoremgd')\r\nclr.AddReference('AecBaseMgd')\r\nclr.AddReference('AecPropDataMgd')\r\nclr.AddReference('AeccDbMgd')\r\nclr.AddReference('AeccPressurePipesMgd')\r\nclr.AddReference('acdbmgdbrep')\r\nclr.AddReference('System.Windows.Forms')\r\n\r\n# Add standard Python references\r\nimport sys\r\nsys.path.append('C:\\Program Files (x86)\\IronPython 2.7\\Lib')\r\nimport os\r\nimport math\r\n\r\n# Add references to manage arrays, collections and interact with the user\r\nfrom System import *\r\nfrom System.IO import *\r\nfrom System.Collections.Specialized import *\r\nfrom System.Windows.Forms import MessageBox\r\n\r\n# Create an alias to the Autodesk.AutoCAD.ApplicationServices.Application class\r\nimport Autodesk.AutoCAD.ApplicationServices.Application as acapp\r\n\r\n# Import references from AutoCAD\r\nfrom Autodesk.AutoCAD.Runtime import *\r\nfrom Autodesk.AutoCAD.ApplicationServices import *\r\nfrom Autodesk.AutoCAD.EditorInput import *\r\nfrom Autodesk.AutoCAD.DatabaseServices import *\r\nfrom Autodesk.AutoCAD.Geometry import *\r\n\r\n# Import references for PropertySets\r\nfrom Autodesk.Aec.PropertyData import *\r\nfrom Autodesk.Aec.PropertyData.DatabaseServices import *\r\n\r\n# Import references for Civil 3D\r\nfrom Autodesk.Civil.ApplicationServices import *\r\nfrom Autodesk.Civil.DatabaseServices import *\r\n\r\nadoc = acapp.DocumentManager.MdiActiveDocument\r\ncdoc = CivilApplication.ActiveDocument\r\ned = adoc.Editor\r\n\r\n# Example function\r\ndef get_soe_by_en(name, easting, northing):\r\n\t\"\"\"\r\n\tReturns a dictioanry with station and offset from the alignment.\r\n\t\r\n\t:param name: The name of the alignment\r\n\t:param easting: The easting value\r\n\t:param norhting: The northing value\r\n\t:returns: a dictionary with station and offset\r\n\t\"\"\"\r\n\t\t\r\n\tglobal adoc\r\n\tglobal cdoc\r\n\t\r\n\tstation = clr.Reference[float]()\r\n\toffset = clr.Reference[float]()\r\n\t\r\n\toutput = []\r\n\r\n\twith adoc.LockDocument():\r\n\t\twith adoc.Database as db:\r\n\t\t\twith db.TransactionManager.StartTransaction() as t:\r\n\t\t\t\tbt = t.GetObject(db.BlockTableId, OpenMode.ForWrite)\r\n\t\t\t\tbtr = t.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite)\r\n\t\t\t\talignment = None\r\n\t\t\t\tfor oid in cdoc.GetSitelessAlignmentIds():\r\n\t\t\t\t\tal = t.GetObject(oid, OpenMode.ForRead)\r\n\t\t\t\t\tif al.Name == name:\r\n\t\t\t\t\t\talignment = al\r\n\t\t\t\t\t\tbreak\r\n\t\t\t\t# Couldn't find the alignment with the given name\r\n\t\t\t\tif alignment is None:\r\n\t\t\t\t\treturn\r\n\t\t\t\t\r\n\t\t\t\talignment.StationOffset(easting, northing, station, offset)\r\n\t\t\t\t\r\n\treturn {'Station': station.Value, 'Offset': offset.Value}\r\n\r\nalignments = IN[0]\r\neasting = IN[1]\r\nnorthing = IN[2]\r\n\t\r\nif not isinstance(alignments, list):\r\n\talignments = [alignments]\r\n\t\r\nif not isinstance(easting,list):\r\n\teasting = [easting]\r\n\t\r\nif not isinstance(northing,list):\r\n\tnorting = [northing]\r\n\t\r\nOUT = [get_soe_by_en(a, e, n) for a, e, n in zip(alignments, easting, northing)]",
+      "VariableInputPorts": true,
+      "Id": "e7dce0a0f4154ca08ee1a6767aac306e",
+      "Inputs": [
+        {
+          "Id": "dba854954b6042539daace9c4e906da1",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "613ce8d5406642148d4b3366ff89746b",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d1489792f04440c2a6d1bf8ac16cc72a",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "12dea57bd8414cb8be26696a28309c62",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Created By: \tJowenn S. Lua\r\n# Python Name:\tConvert [x] to [x%]\r\n#----------------------------------------------------\r\n# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\n\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataIn0 = IN[0]\r\ndataOut = []\r\n\r\nfor x in dataIn0:\r\n\tdataOut.append(str(x)+\"%\")\r\n\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = dataOut\r\n\r\n",
+      "VariableInputPorts": true,
+      "Id": "71a4cc25f2b5410a961d0f4ed3b9258a",
+      "Inputs": [
+        {
+          "Id": "e01be6a05f31478db9cf3c5396c95634",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "826a6c237cfc4182a45b480dfb559459",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Created By: \tJowenn S. Lua\r\n# Python Name:\tList By Repeated Index\r\n#----------------------------------------------------\r\n# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\n\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataIn0 = IN[0]\r\ndataIn1 = IN[1]\r\ndataOut = []\r\n\r\n# Place your code below this line\r\nfor x in dataIn1:\r\n\tdataOut.append(dataIn0[x])\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = dataOut",
+      "VariableInputPorts": true,
+      "Id": "1253a27d4a4b4c1fa158001a7eb2cbd7",
+      "Inputs": [
+        {
+          "Id": "d6b70ca10afd4093afcfcb9b5311dd1a",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2421ae09eb194d2abd1a69f8a65e2359",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8d5f26b24c124d0a9ee6ec281892f91a",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Created By: \tJowenn S. Lua\r\n# Python Name:\tNumToStr\r\n#----------------------------------------------------\r\n# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataIn0 = IN[0]\r\ndataOut = []\r\n\r\nfor x in dataIn0:\r\n\tdataOut.append(str(x)+\"\")\r\n\t\r\n# Assign your output to the OUT variable.\r\nOUT = dataOut",
+      "VariableInputPorts": true,
+      "Id": "1928f887f1a1471abb4567811ab86e0e",
+      "Inputs": [
+        {
+          "Id": "f2096c00836544deb4f3c9cff82bfcba",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ea6c7fb4a4444a6aafe931bd35bb0e15",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Created By: \tJowenn S. Lua\r\n# Python Name:\tConcatenateNumStr\r\n#----------------------------------------------------\r\n# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataIn0 = IN[0]\r\ndataIn1 = IN[1]\r\ndataOut = []\r\n\r\nfor a, x in enumerate(dataIn0):\r\n\tdataOut.append(str(x)+\" \"+str(dataIn1[a]))\r\n\t\r\n# Assign your output to the OUT variable.\r\nOUT = dataOut",
+      "VariableInputPorts": true,
+      "Id": "5e6c83ccc6dc4800810b892421e26ddc",
+      "Inputs": [
+        {
+          "Id": "4afecd6b6d92434499c19dd1014b55e8",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a94ddc4365bb486aa9c9df51af27cdc4",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7fb18bcc1bdc4655b38b03d31f63ebee",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    }
+  ],
+  "Connectors": [],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.4.1.6326",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script - Combine Lists",
+        "Id": "0e405f3ad32c4c7b8e2e17528839ba85",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 589.24325420634659,
+        "Y": 209.95489391092792
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script - Loop List Nth Times",
+        "Id": "600a76514a1243dfb4cd8bf7f0db4bd9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1032.4137505613469,
+        "Y": 332.55318084720807
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script - Loop List Value by Index",
+        "Id": "747fcc8bcc72416bb65cb236e1836e14",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1375.6709994893763,
+        "Y": 267.81316805780284
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script - List Cycle",
+        "Id": "1110adb3312140d89905bbe142edefda",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1717.9781652801366,
+        "Y": 273.93375504768596
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python-Station-Offset",
+        "Id": "e7dce0a0f4154ca08ee1a6767aac306e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2058.4251147319665,
+        "Y": 236.16677723792691
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Python Script - Convert [x] to [x%]",
+        "Id": "71a4cc25f2b5410a961d0f4ed3b9258a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2399.40430047104,
+        "Y": 210.77989445253291
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Python Script - ListByRepeatedIndex",
+        "Id": "1253a27d4a4b4c1fa158001a7eb2cbd7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2740.80231942056,
+        "Y": 210.779894452533
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script - NumToStr",
+        "Id": "1928f887f1a1471abb4567811ab86e0e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3154.8509337591177,
+        "Y": 200.85324869707074
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script - ConcatenateNumStr",
+        "Id": "5e6c83ccc6dc4800810b892421e26ddc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3421.2357430131287,
+        "Y": 221.80006582461749
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "814d30085bad4a20ba2cb0b4df5a3e62",
+        "Title": "PROCESS - Python\r\nCombine Lists",
+        "Nodes": [
+          "0e405f3ad32c4c7b8e2e17528839ba85",
+          "1a617ff3ea9e4fb6b9528360ec1ce329",
+          "79837d9fefb74443aefd5a0893b92045"
+        ],
+        "Left": 579.24325420634659,
+        "Top": -112.49503729753087,
+        "Width": 423.69257379797705,
+        "Height": 419.14218086827259,
+        "FontSize": 36.0,
+        "InitialTop": -16.495037297530871,
+        "InitialHeight": 419.14218086827259,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "b14b10deee8849ab92886b447e58cda4",
+        "Title": "PROCESS - Python\r\nLoop Create new list duplicated Nth time",
+        "Nodes": [
+          "600a76514a1243dfb4cd8bf7f0db4bd9",
+          "63faf97de34248988003852a0698476a"
+        ],
+        "Left": 1020.4026120855749,
+        "Top": -112.90990392525703,
+        "Width": 319.0,
+        "Height": 565.46308477246509,
+        "FontSize": 36.0,
+        "InitialTop": 70.090096074742974,
+        "InitialHeight": 407.46308477246509,
+        "TextblockHeight": 173.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "120ce2d474f2435cb79b08457bbfe6ea",
+        "Title": "PROCESS - Python\r\nLoop List by Value Using Index",
+        "Nodes": [
+          "747fcc8bcc72416bb65cb236e1836e14",
+          "422e0965b436445a83c1036a27844401"
+        ],
+        "Left": 1362.1733004828639,
+        "Top": -114.72140493537438,
+        "Width": 319.0,
+        "Height": 450.53457299317722,
+        "FontSize": 36.0,
+        "InitialTop": 25.27859506462562,
+        "InitialHeight": 387.53457299317722,
+        "TextblockHeight": 130.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "c15358b34b8446b9a198cb6a0e8838df",
+        "Title": "PROCESS - Python\r\nLoop List by amount",
+        "Nodes": [
+          "1110adb3312140d89905bbe142edefda",
+          "0f534a4d53d44f24a0a03105db8c48d0"
+        ],
+        "Left": 1707.402296384852,
+        "Top": -115.75958807064774,
+        "Width": 319.0,
+        "Height": 483.6933431183337,
+        "FontSize": 36.0,
+        "InitialTop": 24.240411929352263,
+        "InitialHeight": 394.6933431183337,
+        "TextblockHeight": 130.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "a000a66391854954b370ec4629cccad3",
+        "Title": "PROCESS - Python\r\nStation and Offset",
+        "Nodes": [
+          "e7dce0a0f4154ca08ee1a6767aac306e",
+          "914e860715dd413ebfe1ce25a3b79c9d"
+        ],
+        "Left": 2048.4251147319665,
+        "Top": -119.13511500218738,
+        "Width": 319.54283302596468,
+        "Height": 475.30189224011428,
+        "FontSize": 36.0,
+        "InitialTop": -23.135115002187376,
+        "InitialHeight": 404.30189224011428,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "e616bc8ea03644a5a07dbd074a163632",
+        "Title": "PROCESS - Python\r\nConvert [x] to [x%]",
+        "Nodes": [
+          "71a4cc25f2b5410a961d0f4ed3b9258a",
+          "62c56f2a5ff247feb3f313911cfc48dc"
+        ],
+        "Left": 2389.40430047104,
+        "Top": -118.29123276383361,
+        "Width": 321.75125921344988,
+        "Height": 397.07112721636651,
+        "FontSize": 36.0,
+        "InitialTop": -22.291232763833605,
+        "InitialHeight": 378.07112721636651,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "30c2065024f54c1898d81bae41bf218d",
+        "Title": "PROCESS - Python\r\nListByRepeatedIndex",
+        "Nodes": [
+          "1253a27d4a4b4c1fa158001a7eb2cbd7",
+          "1fde5f7059de404c94b8e491cd4ec611"
+        ],
+        "Left": 2730.80231942056,
+        "Top": -118.29123276383361,
+        "Width": 337.54333333333335,
+        "Height": 423.07112721636662,
+        "FontSize": 36.0,
+        "InitialTop": -22.2912327638336,
+        "InitialHeight": 378.07112721636662,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "cc4e1a9eca44441aba5c1aa315f8a6a4",
+        "Title": "PROCESS - Python\r\nNumToStr",
+        "Nodes": [
+          "1928f887f1a1471abb4567811ab86e0e",
+          "7eb63e77d4b542189962a4d7ef856bc3"
+        ],
+        "Left": 3081.0911070467041,
+        "Top": -116.10873393126178,
+        "Width": 319.0,
+        "Height": 384.96198262833252,
+        "FontSize": 36.0,
+        "InitialTop": -20.108733931261781,
+        "InitialHeight": 318.96198262833252,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "bdc972d8493946db80ad4a109e51079a",
+        "Title": "PROCESS - Python\r\nConcatenateNumStr",
+        "Nodes": [
+          "5e6c83ccc6dc4800810b892421e26ddc",
+          "a7e888a8f1944d3eba3a9c42452bbea5"
+        ],
+        "Left": 3411.2357430131287,
+        "Top": -115.90310023970835,
+        "Width": 330.43666666666667,
+        "Height": 431.70316606432584,
+        "FontSize": 36.0,
+        "InitialTop": -19.903100239708351,
+        "InitialHeight": 365.70316606432584,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "1a617ff3ea9e4fb6b9528360ec1ce329",
+        "Title": "INSTRUCTIONS\r\n________________________________________________________\r\nCreate a combined list of XYZ and Attributes.\r\n\r\n\r\nINPUTS\r\n________________________________________________________\r\n[0] List [XYZ]\r\n[1] List [Attributes]\r\n\r\nOUTPUT\r\n________________________________________________________\r\n[0] List [XYZ + Attributes]\r\n",
+        "Nodes": [],
+        "Left": 593.58513704601728,
+        "Top": -16.495037297530871,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "79837d9fefb74443aefd5a0893b92045",
+        "Title": "Block - with Attribute",
+        "Nodes": [],
+        "Left": 859.93582800432364,
+        "Top": 262.64714357074172,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "63faf97de34248988003852a0698476a",
+        "Title": "INSTRUCTIONS\r\n________________________________________________________\r\nCreate a new list from user input list to be duplicated Nth times.\r\n\r\n\r\nINPUTS\r\n________________________________________________________\r\n[0] List to duplicate (Must be a List)\r\n[1] List.Count\r\n[2] Number of times to duplicate (Nth)\r\n\r\nOUTPUT\r\n________________________________________________________\r\n[0] New List duplicated Nth times\r\n",
+        "Nodes": [],
+        "Left": 1030.4026120855749,
+        "Top": 70.090096074742974,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "422e0965b436445a83c1036a27844401",
+        "Title": "INSTRUCTIONS\r\n________________________________________________________\r\nCreate a new list from list value and using index as result.\r\n\r\n\r\nINPUTS\r\n________________________________________________________\r\n[0] List of Numbers\r\n\r\nOUTPUT\r\n________________________________________________________\r\n[0] New List using Index as result\r\n",
+        "Nodes": [],
+        "Left": 1372.1733004828639,
+        "Top": 25.27859506462562,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "0f534a4d53d44f24a0a03105db8c48d0",
+        "Title": "INSTRUCTIONS\r\n________________________________________________________\r\nCreate a new list from looping Name with Amount.\r\nAlternatively, Use List Cycle Nodes\r\n\r\n\r\nINPUTS\r\n________________________________________________________\r\n[0] Name (Var[])\r\n[1] Amount (Int)\r\n\r\nOUTPUT\r\n________________________________________________________\r\n[0] New List Loop Name with Amount\r\n",
+        "Nodes": [],
+        "Left": 1717.402296384852,
+        "Top": 24.240411929352263,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "914e860715dd413ebfe1ce25a3b79c9d",
+        "Title": "INSTRUCTIONS\r\n________________________________________________________\r\nCreate a dictionary of station and offset from an alignment.\r\n\r\n\r\nINPUTS\r\n________________________________________________________\r\n[0] List of Alignment name [Str]\r\n[1] List of Easting [Point.X]\r\n[2] List of Northing [Point.Y]\r\n\r\nOUTPUT\r\n________________________________________________________\r\n[0] Dictionary [Station: Value | Offset: Value]\r\n",
+        "Nodes": [],
+        "Left": 2058.9679477579311,
+        "Top": -23.135115002187376,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "62c56f2a5ff247feb3f313911cfc48dc",
+        "Title": "INSTRUCTIONS\r\n________________________________________________________\r\nConvert List of numbers with List of strings plus percent sign. [x] > [x%]\r\n\r\n\r\nINPUTS\r\n________________________________________________________\r\n[0] List of numbers [x]\r\n\r\nOUTPUT\r\n________________________________________________________\r\n[0] List of strings with percent [x%]\r\n",
+        "Nodes": [],
+        "Left": 2402.15555968449,
+        "Top": -22.291232763833605,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "1fde5f7059de404c94b8e491cd4ec611",
+        "Title": "INSTRUCTIONS\r\n________________________________________________________\r\nCreate a new list from list of repeated index.\r\n\r\n\r\nINPUTS\r\n________________________________________________________\r\n[0] List [x]\r\n[1] List of Repeated Index [i]\r\n\r\nOUTPUT\r\n________________________________________________________\r\n[0] New List [var]\r\n",
+        "Nodes": [],
+        "Left": 2740.80231942056,
+        "Top": -22.2912327638336,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "7eb63e77d4b542189962a4d7ef856bc3",
+        "Title": "INSTRUCTIONS\r\n________________________________________________________\r\nConvert Number to String without adding extra zero.\r\n\r\n\r\nINPUTS\r\n________________________________________________________\r\n[0] List of numbers\r\n\r\nOUTPUT\r\n________________________________________________________\r\n[0] List of String (No extra zero added)\r\n",
+        "Nodes": [],
+        "Left": 3091.0911070467041,
+        "Top": -20.108733931261781,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "a7e888a8f1944d3eba3a9c42452bbea5",
+        "Title": "INSTRUCTIONS\r\n________________________________________________________\r\nConcatenate List of numbers and List of string by converting both to string without adding extra zero.\r\n\r\n\r\nINPUTS\r\n________________________________________________________\r\n[0] List of numbers\r\n[1] List of strings\r\n\r\nOUTPUT\r\n________________________________________________________\r\n[0] List of Concatenated Number String\r\n",
+        "Nodes": [],
+        "Left": 3424.9946368421065,
+        "Top": -19.903100239708351,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -212.47632028161956,
+    "Y": 317.835793101828,
+    "Zoom": 0.41842118211310142
+  }
+}

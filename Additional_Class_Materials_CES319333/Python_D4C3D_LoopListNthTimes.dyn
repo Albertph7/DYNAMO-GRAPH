@@ -1,0 +1,758 @@
+{
+  "Uuid": "aacb7e72-59fa-4443-af8a-829e1d8b4755",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Python_D4C3D_LoopListNthTimes",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 3,
+      "MaximumValue": 5,
+      "MinimumValue": 1,
+      "StepValue": 1,
+      "Id": "7cc22391c48d43e9928d5040a3b1135e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f6bdf7027a7248c99ea14c8a6a4dd616",
+          "Name": "",
+          "Description": "Int32",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "[\"TestPoint\", \"Testlink\", \"YYY\", \"UUU\"];",
+      "Id": "858facf46b8947fc93faa3939044c675",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "605b2083956240db91fa87ce236a7303",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Count@var[]..[]",
+      "Id": "02ad33ef848b4d599f5ad577ef97cec9",
+      "Inputs": [
+        {
+          "Id": "8584535627ce4f308a74ac7f460c5633",
+          "Name": "list",
+          "Description": "List to get the item count of.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b6832af40ed24c919fc8b7f4e4975c0d",
+          "Name": "count",
+          "Description": "List length.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the number of items stored in the given list.\n\nList.Count (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "a95a5a739f664f0ab301553af985e4c0",
+      "Inputs": [
+        {
+          "Id": "5066f77496e24926aacbcc0c6c9c8ecf",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fd0b82308d27403781630a92c4a136b2",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Created By: \tJowenn S. Lua\r\n# Python Name:\tLoop List Nth Times\r\n#----------------------------------------------------\r\n# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\n#clr.AddReference('ProtoGeometry')\r\n#from Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataIn0 = IN[0]\r\ndataIn1 = IN[1]\r\ndataIn2 = IN[2]\r\ndataOut = []\r\n\r\n# Place your code below this line\r\nfor x in range(dataIn2):\r\n\tfor y in range(dataIn1):\r\n\t\tdataOut.append(dataIn0[y])\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = dataOut",
+      "VariableInputPorts": true,
+      "Id": "860323d1c1e547029a114f397a56af50",
+      "Inputs": [
+        {
+          "Id": "1d178e02d88647869aa60f3c5541445a",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7b56bb381bbc413499b0e6e72e5c29fb",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "84b72a1a8b52405a9cf5b75b3ca2217e",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9c1872cb6e7d4a2585ab0a1f2571b909",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "ConvertStringToList",
+      "Id": "e7f725338838430a8e10cf8338b740de",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "69cff50cc5744a709b6e28fe663ba814",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "184011ef74cf4bca8f3e9157c8e03894",
+      "Inputs": [
+        {
+          "Id": "3fe4c90f13714e33a8c9e9f9e3076361",
+          "Name": "item0",
+          "Description": "Item Index #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "54fa9aa542da4232a4c7435312727987",
+          "Name": "list",
+          "Description": "A list",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Makes a new list out of the given inputs"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Cycle@var[]..[],int",
+      "Id": "ce93c6f49a0c4325a6779b88a9dda665",
+      "Inputs": [
+        {
+          "Id": "3467d8a91df14c2c886388e01d78fda8",
+          "Name": "list",
+          "Description": "List to repeat.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d1becd9eb8424e04a5389b3efcf7ef22",
+          "Name": "amount",
+          "Description": "Number of times to repeat.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5396a4ea4f9f4c2ebe0607830902931c",
+          "Name": "list",
+          "Description": "List of repeated lists.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a new list by concatenining copies of a given list.\n\nList.Cycle (list: var[]..[], amount: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "3ee2449a1b9a4c1ca060191ff18d349d",
+      "Inputs": [
+        {
+          "Id": "edc8584025e94c8194ab501b25b3a696",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b90b6f632d05413cb588b4b06557ea58",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "f6bdf7027a7248c99ea14c8a6a4dd616",
+      "End": "84b72a1a8b52405a9cf5b75b3ca2217e",
+      "Id": "599569264aba434f9c1055bafdfa2097"
+    },
+    {
+      "Start": "f6bdf7027a7248c99ea14c8a6a4dd616",
+      "End": "d1becd9eb8424e04a5389b3efcf7ef22",
+      "Id": "385a3cda0be541d7a442c5a78ab4f668"
+    },
+    {
+      "Start": "605b2083956240db91fa87ce236a7303",
+      "End": "8584535627ce4f308a74ac7f460c5633",
+      "Id": "3c3e1618f7f449738d8cc1a446a436ff"
+    },
+    {
+      "Start": "605b2083956240db91fa87ce236a7303",
+      "End": "1d178e02d88647869aa60f3c5541445a",
+      "Id": "3f71dc0a138d41709fd907248da8ace0"
+    },
+    {
+      "Start": "605b2083956240db91fa87ce236a7303",
+      "End": "3467d8a91df14c2c886388e01d78fda8",
+      "Id": "7d5e845cdeeb4cce9d9afda548fca3f4"
+    },
+    {
+      "Start": "b6832af40ed24c919fc8b7f4e4975c0d",
+      "End": "7b56bb381bbc413499b0e6e72e5c29fb",
+      "Id": "0ad13d6e97cf4b53a7f52c7e4e8dd156"
+    },
+    {
+      "Start": "9c1872cb6e7d4a2585ab0a1f2571b909",
+      "End": "5066f77496e24926aacbcc0c6c9c8ecf",
+      "Id": "8d51861bf36541c1a92f3c7bd50bce38"
+    },
+    {
+      "Start": "69cff50cc5744a709b6e28fe663ba814",
+      "End": "3fe4c90f13714e33a8c9e9f9e3076361",
+      "Id": "7c82722518184ad98e6fd74bcbf3d961"
+    },
+    {
+      "Start": "5396a4ea4f9f4c2ebe0607830902931c",
+      "End": "edc8584025e94c8194ab501b25b3a696",
+      "Id": "5f873f5a0ba141f48a8bc2025a0fcf26"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.4.1.6326",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Integer Slider",
+        "Id": "7cc22391c48d43e9928d5040a3b1135e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1874.7182727130983,
+        "Y": 1080.5864372323772
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "858facf46b8947fc93faa3939044c675",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1538.7163765690473,
+        "Y": 869.86059549176844
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Count",
+        "Id": "02ad33ef848b4d599f5ad577ef97cec9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2002.718272713093,
+        "Y": 972.586437232377
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "a95a5a739f664f0ab301553af985e4c0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2691.311282171785,
+        "Y": 864.92560057008018
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script - Loop List Nth Times",
+        "Id": "860323d1c1e547029a114f397a56af50",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2320.3316077094869,
+        "Y": 864.92560057008018
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "e7f725338838430a8e10cf8338b740de",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1537.8566976979619,
+        "Y": 671.3798804956258
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Create",
+        "Id": "184011ef74cf4bca8f3e9157c8e03894",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1793.1815188933924,
+        "Y": 671.03664153553075
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Cycle",
+        "Id": "ce93c6f49a0c4325a6779b88a9dda665",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2320.33160770949,
+        "Y": 1056.35976895956
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "3ee2449a1b9a4c1ca060191ff18d349d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2542.90399100815,
+        "Y": 1056.57352909431
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "8f5863a155bb45ac928e26611d079d9e",
+        "Title": "DATA IN - User Input",
+        "Nodes": [
+          "7cc22391c48d43e9928d5040a3b1135e",
+          "858facf46b8947fc93faa3939044c675",
+          "02ad33ef848b4d599f5ad577ef97cec9"
+        ],
+        "Left": 1528.7163765690473,
+        "Top": 816.86059549176844,
+        "Width": 655.00189614404576,
+        "Height": 331.72584174060876,
+        "FontSize": 36.0,
+        "InitialTop": 869.86059549176844,
+        "InitialHeight": 355.72584174060876,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "9e1183d8ea4d49f493f0eaffe58358e0",
+        "Title": "PROCESS - Python\r\nLoop Create new list duplicated Nth time",
+        "Nodes": [
+          "860323d1c1e547029a114f397a56af50",
+          "b05d7e6cd682474ea487fb52a2213196"
+        ],
+        "Left": 2273.6224272416875,
+        "Top": 413.26643687046658,
+        "Width": 319.0,
+        "Height": 596.6591636996136,
+        "FontSize": 36.0,
+        "InitialTop": 596.26643687046658,
+        "InitialHeight": 413.6591636996136,
+        "TextblockHeight": 173.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "0acce2123498415cbfa05f2d90089f5c",
+        "Title": "PROCESS",
+        "Nodes": [
+          "e64368ffebd2437792c80dfbeaa98046"
+        ],
+        "Left": 768.43560686975934,
+        "Top": 685.12032504104172,
+        "Width": 244.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 738.12032504104172,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "91d114b3b06e430883f4b1546cfa2e45",
+        "Title": "DATA IN",
+        "Nodes": [
+          "1b6afe6230bb45028d8804bb5cbc8074"
+        ],
+        "Left": 767.91791180833548,
+        "Top": 584.66343884673461,
+        "Width": 244.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 637.66343884673461,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "846368a2e7a0410fbbf45222cf8e79f0",
+        "Title": "GET",
+        "Nodes": [
+          "17f28e2e51ae42028cba616838ec7f1c"
+        ],
+        "Left": 767.46130524390674,
+        "Top": 483.15462827201441,
+        "Width": 243.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 536.15462827201441,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "b07859f2c52c403fb79d768088e9f18a",
+        "Title": "NOTES - D4C3D",
+        "Nodes": [
+          "8ed53bb244014a198f7eba6ecfdd94b0"
+        ],
+        "Left": 434.19595289767244,
+        "Top": 483.82659478305527,
+        "Width": 326.0,
+        "Height": 414.0,
+        "FontSize": 36.0,
+        "InitialTop": 536.82659478305527,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF848484"
+      },
+      {
+        "Id": "567d2006a28a4d948875c345044b3400",
+        "Title": "SET",
+        "Nodes": [
+          "40f8b54d602b470fbec892f23b8a0b47"
+        ],
+        "Left": 1015.9909499299097,
+        "Top": 684.79327952603512,
+        "Width": 234.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 737.79327952603512,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF71C6A8"
+      },
+      {
+        "Id": "7a60a04a68164544941e998f268fa92a",
+        "Title": "DATA OUT",
+        "Nodes": [
+          "3e8a56fd786647c3b64beca10f987ed7"
+        ],
+        "Left": 1016.077288924685,
+        "Top": 584.58540922917177,
+        "Width": 235.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 637.58540922917177,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "d8e149c2fcac4146bac04c1f66016770",
+        "Title": "CREATE",
+        "Nodes": [
+          "2b525fb3a900493c9c7c6efaafe6448d"
+        ],
+        "Left": 1015.4641502011973,
+        "Top": 482.81021783615506,
+        "Width": 236.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 535.81021783615506,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "264152c6345a4745b2c5bd4439a20df6",
+        "Title": "TEMP",
+        "Nodes": [
+          "e17c8417fd6e48959b8926b18c2547e0"
+        ],
+        "Left": 766.630228145201,
+        "Top": 802.23671496862926,
+        "Width": 482.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": 855.23671496862926,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "c4f455243563464c999521afe52df8b4",
+        "Title": "DATA IN - String to List",
+        "Nodes": [
+          "e7f725338838430a8e10cf8338b740de",
+          "184011ef74cf4bca8f3e9157c8e03894"
+        ],
+        "Left": 1527.8566976979619,
+        "Top": 618.03664153553075,
+        "Width": 395.32482119543056,
+        "Height": 146.0,
+        "FontSize": 36.0,
+        "InitialTop": 671.03664153553075,
+        "InitialHeight": 145.34323896009505,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "b05d7e6cd682474ea487fb52a2213196",
+        "Title": "INSTRUCTIONS\r\n________________________________________________________\r\nCreate a new list from user input list to be duplicated Nth times.\r\n\r\n\r\nINPUTS\r\n________________________________________________________\r\n[0] List to duplicate (Must be a List)\r\n[1] List.Count\r\n[2] Number of times to duplicate (Nth)\r\n\r\nOUTPUT\r\n________________________________________________________\r\n[0] New List duplicated Nth times\r\n",
+        "Nodes": [],
+        "Left": 2283.6224272416875,
+        "Top": 596.26643687046658,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "e64368ffebd2437792c80dfbeaa98046",
+        "Title": "Dynamo data & objects creation          ",
+        "Nodes": [],
+        "Left": 778.43560686975934,
+        "Top": 738.12032504104172,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "1b6afe6230bb45028d8804bb5cbc8074",
+        "Title": "Import information / data from others ",
+        "Nodes": [],
+        "Left": 777.91791180833548,
+        "Top": 637.66343884673461,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "17f28e2e51ae42028cba616838ec7f1c",
+        "Title": "Get information / data from Civil 3D    ",
+        "Nodes": [],
+        "Left": 777.46130524390674,
+        "Top": 536.15462827201441,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "8ed53bb244014a198f7eba6ecfdd94b0",
+        "Title": "DESIGN GRAPH STANDARDS\r\n                                                                                       \r\nAuthor:\t\tJowenn S. Lua\r\nDate Created:\t10 August 2019\r\nDate Updated:\t24 August 2019\r\nVersion:\t\t002\r\n________________________________________________________\r\n\r\nDESIGN GRAPH GUIDELINES\r\n\r\n1. Color code your blocks according to this guide.\r\n\r\n2. Add grouping with name and description.\r\n\r\n3. Add notes to explain each critical node process.\r\n\r\n4. Rename Input / Output / Code Blocks nodes and add suffix to data they carry.\r\n\r\n5. Align nodes to make it neat.\r\n\r\n6. Save the graph as Manual instead of Automatic.\r\n________________________________________________________",
+        "Nodes": [],
+        "Left": 444.19595289767244,
+        "Top": 536.82659478305527,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "40f8b54d602b470fbec892f23b8a0b47",
+        "Title": "Set or Override Parameter in Civil 3D",
+        "Nodes": [],
+        "Left": 1025.9909499299097,
+        "Top": 737.79327952603512,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "3e8a56fd786647c3b64beca10f987ed7",
+        "Title": "Export information / data to others   ",
+        "Nodes": [],
+        "Left": 1026.077288924685,
+        "Top": 637.58540922917177,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "2b525fb3a900493c9c7c6efaafe6448d",
+        "Title": "Create object in Civil 3D                     ",
+        "Nodes": [],
+        "Left": 1025.4641502011973,
+        "Top": 535.81021783615506,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "e17c8417fd6e48959b8926b18c2547e0",
+        "Title": "Not in use / Work in progress / To Debug / To delete                                                  ",
+        "Nodes": [],
+        "Left": 776.630228145201,
+        "Top": 855.23671496862926,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -1340.4005952144914,
+    "Y": -352.79228142799184,
+    "Zoom": 0.89823706243226242
+  }
+}

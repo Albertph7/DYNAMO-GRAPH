@@ -1,0 +1,490 @@
+{
+  "Uuid": "d3d0d823-722c-4be9-ab4a-ab9f7fbcc983",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Basic_05_D4C3D_Get_AllObjectofType",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "List": {
+        "Key": "List",
+        "Value": "BuiltIn.ds"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Autodesk.AutoCAD.DynamoNodes.AcObjectTypes, AutoCADNodesUI",
+      "SelectedIndex": 7,
+      "SelectedString": "Polyline",
+      "NodeType": "ExtensionNode",
+      "Id": "f8c53cbc0db04dfbb46d327cc9d63bbb",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4cd1d7cc0cc44758b89c035a9cc2a7b0",
+          "Name": "Object Type",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select object type."
+    },
+    {
+      "ConcreteType": "Autodesk.AutoCAD.DynamoNodes.AcObjectsOfType, AutoCADNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "0f1aadb5487d4b78b1e3e7b7a6cc70de",
+      "Inputs": [
+        {
+          "Id": "1f0f401c122345f8a9c2fd461a5a0669",
+          "Name": "type",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "677dd075d89c410a91e4b656c15aa3f4",
+          "Name": "block",
+          "Description": "Block",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9e1b804f8954422da5f8f45344ead990",
+          "Name": "Object[]",
+          "Description": "Object[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select all objects of the type."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.AutoCAD.DynamoNodes.Document.ModelSpace",
+      "Id": "6d2f9e7e85684656a31a9915700f61b6",
+      "Inputs": [
+        {
+          "Id": "31249b79861a43448c52322caa4c3d14",
+          "Name": "document",
+          "Description": "Autodesk.AutoCAD.DynamoNodes.Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "161c1167238c432c8399fa4ca01ed782",
+          "Name": "Block",
+          "Description": "Block",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the model space block table record.\n\nDocument.ModelSpace: Block"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.AutoCAD.DynamoNodes.Document.Current",
+      "Id": "96111702e53645799c2cdac08ddc84b8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "05454c46e41b40e78783a556abb77800",
+          "Name": "Document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the current AutoCAD document.\n\nDocument.Current: Document"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "4cd1d7cc0cc44758b89c035a9cc2a7b0",
+      "End": "1f0f401c122345f8a9c2fd461a5a0669",
+      "Id": "71464c6b5a4a4dfa9d45a2b79a66e158"
+    },
+    {
+      "Start": "161c1167238c432c8399fa4ca01ed782",
+      "End": "677dd075d89c410a91e4b656c15aa3f4",
+      "Id": "85656276509345d6b0e4b98bf2f83be1"
+    },
+    {
+      "Start": "05454c46e41b40e78783a556abb77800",
+      "End": "31249b79861a43448c52322caa4c3d14",
+      "Id": "63edd9f7a92f40268e75cfd55171c90c"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.4.1.6326",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.76582073613443,
+      "EyeY": 54.789015259773663,
+      "EyeZ": 42.940568151540212,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": false,
+        "Name": "Objects Types",
+        "Id": "f8c53cbc0db04dfbb46d327cc9d63bbb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1108.9348046838334,
+        "Y": -372.22726094558095
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "All Objects of Type",
+        "Id": "0f1aadb5487d4b78b1e3e7b7a6cc70de",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1426.8060950396359,
+        "Y": -334.30646915974484
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Document.ModelSpace",
+        "Id": "6d2f9e7e85684656a31a9915700f61b6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1078.9348046838334,
+        "Y": -264.22726094558095
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Document.Current",
+        "Id": "96111702e53645799c2cdac08ddc84b8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 850.93480468383336,
+        "Y": -264.22726094558095
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "cddc7e196ad34d5e986a3a0c95195ea2",
+        "Title": "GET - Current > ModelSpace > Objects Types",
+        "Nodes": [
+          "f8c53cbc0db04dfbb46d327cc9d63bbb",
+          "0f1aadb5487d4b78b1e3e7b7a6cc70de",
+          "6d2f9e7e85684656a31a9915700f61b6",
+          "96111702e53645799c2cdac08ddc84b8",
+          "ff4994a49b884342a8e410e170728c6d"
+        ],
+        "Left": 840.93480468383336,
+        "Top": -459.57203114910283,
+        "Width": 739.87129035580256,
+        "Height": 288.34477020352188,
+        "FontSize": 36.0,
+        "InitialTop": -406.57203114910283,
+        "InitialHeight": 287.34477020352188,
+        "TextblockHeight": 43.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "d3513a68ac774234bf33298fca57b750",
+        "Title": "PROCESS",
+        "Nodes": [
+          "d098dd3b9bc54ce18932ff556d32b958"
+        ],
+        "Left": 238.4317297915477,
+        "Top": -262.08367655661993,
+        "Width": 244.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -209.08367655661993,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "1fa2d5db4807400e88d9baa72a3ea024",
+        "Title": "DATA IN",
+        "Nodes": [
+          "7bf015dfa38c47358f3b21d45a9cc96d"
+        ],
+        "Left": 237.91403473012383,
+        "Top": -362.54056275092705,
+        "Width": 244.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -309.54056275092705,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "d7d76fccbe0f4fc48c1b12433216d4cf",
+        "Title": "GET",
+        "Nodes": [
+          "9d27f1a12863453c880a1ae47bcd59ce"
+        ],
+        "Left": 237.45742816569509,
+        "Top": -464.04937332564725,
+        "Width": 243.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -411.04937332564725,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "988c1ed64a8d4c5390fce3bcd9cbc547",
+        "Title": "NOTES - D4C3D",
+        "Nodes": [
+          "cc7f8d0103de49f1bcab610d288d6774"
+        ],
+        "Left": -95.8079241805392,
+        "Top": -463.37740681460639,
+        "Width": 326.0,
+        "Height": 414.0,
+        "FontSize": 36.0,
+        "InitialTop": -410.37740681460639,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF848484"
+      },
+      {
+        "Id": "462aec22f427432193615e45c3b76f93",
+        "Title": "SET",
+        "Nodes": [
+          "c61016e82ce54cfb80a4879776af9529"
+        ],
+        "Left": 485.98707285169803,
+        "Top": -262.41072207162654,
+        "Width": 234.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -209.41072207162654,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF71C6A8"
+      },
+      {
+        "Id": "02bd41d51ff24c139210c844e96c6ce0",
+        "Title": "DATA OUT",
+        "Nodes": [
+          "b319ed62eca2441bba6ad92d47e10b86"
+        ],
+        "Left": 486.07341184647339,
+        "Top": -362.61859236848989,
+        "Width": 235.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -309.61859236848989,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "62e8e5e1e32e4cf1bb7a47a3e26d7e04",
+        "Title": "CREATE",
+        "Nodes": [
+          "fe4653ee2b5d4164870b2eb3c71528b5"
+        ],
+        "Left": 485.46027312298565,
+        "Top": -464.3937837615066,
+        "Width": 236.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -411.3937837615066,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "7c0dd7e3d7054e8da5f1acbdbccce552",
+        "Title": "TEMP",
+        "Nodes": [
+          "87caa0cf38f44ebfa62c27db2ca90b67"
+        ],
+        "Left": 236.6263510669894,
+        "Top": -144.9672866290324,
+        "Width": 482.0,
+        "Height": 97.0,
+        "FontSize": 36.0,
+        "InitialTop": -91.9672866290324,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "ff4994a49b884342a8e410e170728c6d",
+        "Title": "Choose object type e.g. Line, Solid, Surface, etc.",
+        "Nodes": [],
+        "Left": 1060.9624190340055,
+        "Top": -406.57203114910283,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "d098dd3b9bc54ce18932ff556d32b958",
+        "Title": "Dynamo data & objects creation          ",
+        "Nodes": [],
+        "Left": 248.4317297915477,
+        "Top": -209.08367655661993,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "7bf015dfa38c47358f3b21d45a9cc96d",
+        "Title": "Import information / data from others ",
+        "Nodes": [],
+        "Left": 247.91403473012383,
+        "Top": -309.54056275092705,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "9d27f1a12863453c880a1ae47bcd59ce",
+        "Title": "Get information / data from Civil 3D    ",
+        "Nodes": [],
+        "Left": 247.45742816569509,
+        "Top": -411.04937332564725,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "cc7f8d0103de49f1bcab610d288d6774",
+        "Title": "DESIGN GRAPH STANDARDS\r\n                                                                                       \r\nAuthor:\t\tJowenn S. Lua\r\nDate Created:\t10 August 2019\r\nDate Updated:\t24 August 2019\r\nVersion:\t\t002\r\n________________________________________________________\r\n\r\nDESIGN GRAPH GUIDELINES\r\n\r\n1. Color code your blocks according to this guide.\r\n\r\n2. Add grouping with name and description.\r\n\r\n3. Add notes to explain each critical node process.\r\n\r\n4. Rename Input / Output / Code Blocks nodes and add suffix to data they carry.\r\n\r\n5. Align nodes to make it neat.\r\n\r\n6. Save the graph as Manual instead of Automatic.\r\n________________________________________________________",
+        "Nodes": [],
+        "Left": -85.8079241805392,
+        "Top": -410.37740681460639,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "c61016e82ce54cfb80a4879776af9529",
+        "Title": "Set or Override Parameter in Civil 3D",
+        "Nodes": [],
+        "Left": 495.98707285169803,
+        "Top": -209.41072207162654,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "b319ed62eca2441bba6ad92d47e10b86",
+        "Title": "Export information / data to others   ",
+        "Nodes": [],
+        "Left": 496.07341184647339,
+        "Top": -309.61859236848989,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "fe4653ee2b5d4164870b2eb3c71528b5",
+        "Title": "Create object in Civil 3D                     ",
+        "Nodes": [],
+        "Left": 495.46027312298565,
+        "Top": -411.3937837615066,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "87caa0cf38f44ebfa62c27db2ca90b67",
+        "Title": "Not in use / Work in progress / To Debug / To delete                                                  ",
+        "Nodes": [],
+        "Left": 246.6263510669894,
+        "Top": -91.9672866290324,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 122.29409145775092,
+    "Y": 519.010179256702,
+    "Zoom": 1.0056657620127127
+  }
+}
